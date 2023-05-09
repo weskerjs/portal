@@ -1,0 +1,49 @@
+{
+  "name": "@adonisaddons/docs",
+  "version": "0.0.6",
+  "description": "Docs command for Adonis projects",
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "compile": "npm run clean && tsc && npm run copyfiles",
+    "build": "npm run compile",
+    "copyfiles": "copyfiles -u 1 data/*.json build/",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Max Diamond",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@types/node": "^20.1.1",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^5.0.0",
+    "mrm": "^4.1.14",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@adonisjs/ace": "^11.3.1",
+    "fs": "^0.0.1-security"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "16.13.1",
+    "probotApps": [],
+    "runGhActionsOnWindows": false
+  },
+  "adonisjs": {
+    "instructions": "./build/instructions.js",
+    "commands": [
+      "@adonisjs/core/build/commands/index.js"
+    ]
+  },
+  "files": [
+    "build"
+  ]
+}
