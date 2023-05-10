@@ -2,6 +2,7 @@
   "name": "@adonisaddons/docs",
   "version": "0.0.6",
   "description": "Docs command for Adonis projects",
+  "private": false,
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "pretest": "npm run lint",
@@ -45,5 +46,14 @@
   },
   "files": [
     "build"
-  ]
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisaddons/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisaddons/docs/issues"
+  },
+  "homepage": "https://github.com/adonisaddons/docs#readme"
 }
