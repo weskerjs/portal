@@ -53,6 +53,10 @@
           "dest": "Validators/SignUpValidator"
         },
         {
+          "src": "validators/ResetPasswordValidator.txt",
+          "dest": "Validators/ResetPasswordValidator"
+        },
+        {
           "src": "models/Token.txt",
           "dest": "Models/Token"
         }
