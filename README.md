@@ -1,9 +1,9 @@
 ## portal
 
 This package scaffolds the following for Adonis web applications:  
-✅ Sign up and Sign in flows
-✅ Password Reset flow
-✅ Verify Email flow
+✅ Sign up and Sign in flows  
+✅ Password Reset flow  
+✅ Verify Email flow  
 
 ## Prerequisites
 
