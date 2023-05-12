@@ -1,0 +1,46 @@
+@layout('layouts/portal')
+
+@section('body')
+<div class="flex flex-col min-h-screen bg-gray-100">
+    <div class="container flex flex-col items-center justify-center flex-1 max-w-sm px-2 mx-auto">
+
+        <h1 class="mb-8 text-3xl text-center">👋 Welcome</h1>
+
+        <form method="post" action="/portal/signup" class="w-full px-6 pt-4 pb-8 text-black bg-white rounded shadow-md">
+
+            <input type="text" class="block w-full p-3 mb-4 border rounded border-grey-light" name="name"
+                placeholder="Username" required />
+
+            <input type="text" class="block w-full p-3 mb-4 border rounded border-grey-light" name="email"
+                placeholder="Email" required />
+
+            <input type="password" class="block w-full p-3 mb-4 border rounded border-grey-light" name="password"
+                placeholder="Password" required />
+
+            <input type="password" class="block w-full p-3 mb-4 border rounded border-grey-light"
+                name="confirm_password" placeholder="Confirm Password" required />
+
+            <button type="submit"
+                class="w-full py-3 my-1 text-center text-white transition duration-100 ease-in bg-green-500 rounded hover:bg-green-600 focus:outline-none">Create
+                Account</button>
+
+            <div class="mt-4 text-sm text-center text-gray-500">
+                By signing up, you agree to the
+                <a class="text-gray-500 no-underline border-b border-gray-500" href="#">
+                    Terms of Service
+                </a> and
+                <a class="text-gray-500 no-underline border-b border-gray-500" href="#">
+                    Privacy Policy
+                </a>
+            </div>
+        </form>
+
+        <div class="mt-6 text-gray-500">
+            Already have an account?
+            <a class="text-green-500 no-underline border-b border-green-500" href="/login">
+                Log in
+            </a>.
+        </div>
+    </div>
+</div>
+@end

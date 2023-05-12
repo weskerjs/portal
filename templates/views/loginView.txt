@@ -1,0 +1,34 @@
+@layout('layouts/portal')
+
+@section('body')
+<div class="flex flex-col min-h-screen bg-gray-100">
+    <div class="container flex flex-col items-center justify-center flex-1 max-w-sm px-2 mx-auto">
+
+        <h1 class="mb-8 text-3xl text-center">👋 Welcome back</h1>
+
+        <form class="w-full px-6 py-8 text-black bg-white rounded shadow-md" method="post" action="/portal/login">
+
+            <input type="text" class="block w-full p-3 mb-4 border rounded border-grey-light" name="email" id="email"
+                placeholder="Email" required />
+
+            <input type="password" class="block w-full p-3 mb-4 border rounded border-grey-light" name="password"
+                id="password" placeholder="Password" required />
+
+            <button type="submit"
+                class="w-full py-3 my-1 text-center text-white transition duration-100 ease-in bg-green-500 rounded hover:bg-green-600 focus:outline-none">Sign
+                in</button>
+
+            <div class="mt-2 text-center">
+                <a href="/portal/forgot-password" class="text-green-500 underline ">Forgot password?</a>
+            </div>
+        </form>
+
+        <div class="mt-6 text-gray-500">
+            Don't have an account?
+            <a class="text-green-500 no-underline border-b border-green-500" href="/portal/signup">
+                Sign up
+            </a>.
+        </div>
+    </div>
+</div>
+@end

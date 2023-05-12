@@ -1,3 +1,3 @@
 export default [
-    '@adonisaddons/docs/build/commands/Docs.js'
+    '@adonisaddons/portal/build/commands/Docs.js'
 ]

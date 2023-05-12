@@ -1,7 +1,7 @@
 {
-  "name": "@adonisaddons/docs",
-  "version": "0.0.6",
-  "description": "Docs command for Adonis projects",
+  "name": "@adonisaddons/portal",
+  "version": "0.1.3",
+  "description": "Scaffolding package to generate Auth flows",
   "private": false,
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
@@ -10,23 +10,24 @@
     "clean": "del-cli build",
     "compile": "npm run clean && tsc && npm run copyfiles",
     "build": "npm run compile",
-    "copyfiles": "copyfiles -u 1 data/*.json build/",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "copyfiles": "copyfiles \"templates/**/*txt\" \"instructions.md\" build"
   },
   "author": "Max Diamond",
   "license": "MIT",
   "devDependencies": {
+    "@adonisjs/core": "^5.9.0",
     "@adonisjs/mrm-preset": "^5.0.3",
     "@adonisjs/require-ts": "^2.0.13",
+    "@adonisjs/sink": "^5.4.3",
     "@types/node": "^20.1.1",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.0.0",
     "mrm": "^4.1.14",
     "typescript": "^5.0.4"
   },
-  "dependencies": {
-    "@adonisjs/ace": "^11.3.1",
-    "fs": "^0.0.1-security"
+  "peerDependencies": {
+    "@adonisjs/core": "^5.8.3"
   },
   "mrmConfig": {
     "core": false,
@@ -40,9 +41,59 @@
   },
   "adonisjs": {
     "instructions": "./build/instructions.js",
-    "commands": [
-      "@adonisjs/core/build/commands/index.js"
-    ]
+    "instructionsMd": "./build/instructions.md",
+    "templates": {
+      "app": [
+        {
+          "src": "controllers/PortalController.txt",
+          "dest": "Controllers/Http/PortalController.ts"
+        },
+        {
+          "src": "validators/SignUpValidator.txt",
+          "dest": "Validators/SignUpValidator"
+        },
+        {
+          "src": "models/Token.txt",
+          "dest": "Models/Token"
+        }
+      ],
+      "views": [
+        {
+          "src": "layouts/portal.txt",
+          "dest": "layouts/portal.edge"
+        }, 
+        {
+          "src": "views/loginView.txt",
+          "dest": "portal/loginView.edge"
+        },
+        {
+          "src": "views/signupView.txt",
+          "dest": "portal/signupView.edge"
+        },
+        {
+          "src": "views/accountView.txt",
+          "dest": "portal/accountView.edge"
+        },
+        {
+          "src": "views/resetPasswordView.txt",
+          "dest": "portal/resetPasswordView.edge"
+        },
+        {
+          "src": "views/forgotPasswordView.txt",
+          "dest": "portal/forgotPasswordView.edge"
+        },
+        {
+          "src": "partials/portal_messages.txt",
+          "dest": "partials/portal_messages.edge"
+        }
+      ],
+      "start": [
+        {
+          "src": "routes/portal.txt",
+          "dest": "portal"
+        }
+      ]
+    }
   },
   "files": [
     "build"
@@ -50,10 +101,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisaddons/docs.git"
+    "url": "git+https://github.com/adonisaddons/portal.git"
   },
   "bugs": {
-    "url": "https://github.com/adonisaddons/docs/issues"
+    "url": "https://github.com/adonisaddons/portal/issues"
   },
-  "homepage": "https://github.com/adonisaddons/docs#readme"
+  "homepage": "https://github.com/adonisaddons/portal#readme"
 }

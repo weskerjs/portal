@@ -1,0 +1,25 @@
+@if(flashMessages.has('success'))
+<div class="p-4 bg-green-300">
+    <div class="container mx-auto">
+        <h3 class="font-medium text-green-800">{{ flashMessages.get('success') }}</h3>
+    </div>
+</div>
+@end
+
+@if(flashMessages.has('error') && !flashMessages.has('messages'))
+<div class="p-4 bg-red-300">
+    <div class="container mx-auto">
+        <h3 class="font-medium text-red-800">{{ flashMessages.get('error') }}</h3>
+    </div>
+</div>
+@end
+
+@if(flashMessages.has('messages'))
+<div class="p-4 bg-red-300">
+    <div class="container mx-auto">
+        @each(message in flashMessages.get('messages'))
+        <h3 class="font-medium text-red-800">{{ message }}</h3>
+        @end
+    </div>
+</div>
+@end

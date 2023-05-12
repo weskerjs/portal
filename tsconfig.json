@@ -5,7 +5,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "types": [
-      "@types/node"
+      "@types/node",
+      "./node_modules/@adonisjs/core/build/adonis-typings/index.d.ts",
     ]
   }
 }
