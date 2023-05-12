@@ -31,3 +31,10 @@ This package scaffolds the following for Adonis web applications:
 - This package doesn't send emails but instead emits events that you can tie into your email logic.  
 - Additionally, Portal assumes you have a users table without a `name` column and generates a migration for it.  
 - You will probably need to update your User model with the two new fields this package adds; `name` and `email_verified`  
+
+## Images
+
+![Signup](https://i.imgur.com/HK0eX7D.png)
+![Login](https://i.imgur.com/jfckeVw.png)
+![Forgot Password](https://i.imgur.com/WonR2LK.png)
+![Reset Password](https://i.imgur.com/Lm09UmU.png)
