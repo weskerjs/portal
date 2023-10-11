@@ -22,7 +22,7 @@ This package scaffolds the following for Adonis web applications:
 }
 ```
 
-3. `node configure @adonisaddons/portal`
+3. `node ace configure @adonisaddons/portal`
 4. Import `start/portal.ts` file into `start/routes.ts` file to add portal's routes to your app
 5. Change `redirectTo` in `middleware/auth.ts` to `/portal/login`
 
